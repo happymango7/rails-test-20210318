@@ -170,7 +170,6 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
-    stimulusjs-rails (1.1.1)
     tailwindcss-rails (0.3.3)
       rails (>= 6.0.0)
     thor (1.1.0)
@@ -217,7 +216,6 @@ DEPENDENCIES
   selenium-webdriver
   spring
   sqlite3 (~> 1.4)
-  stimulusjs-rails (~> 1.1.1)
   tailwindcss-rails (~> 0.3.3)
   turbolinks (~> 5)
   tzinfo-data

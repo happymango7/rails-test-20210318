@@ -1,1 +1,42 @@
-<h1 class="text-red-400">Hello World</h1>
+<div class="flex flex-col h-screen" data-controller="home">
+  <div class="container mx-auto h-full flex justify-center items-center">
+    <div class="w-full max-w-sm">
+      <h1 class="text-red-500 text-center">Select your pet!</h1>
+      <div class="border-teal p-8 border-t-12 bg-white mb-6 rounded-lg shadow-lg bg-white-900">
+        <div class="flex">
+          <div class="relative inline-block text-left">
+            <div>
+              <div
+                data-action="click->home#showMenu"
+                class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500  cursor-pointer"
+              >
+                <span data-home-target="current">Pets</span>
+                <!-- Heroicon name: solid/chevron-down -->
+                <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+            <div
+              data-home-target="pets"
+              class="origin-top-right absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden"
+            >
+              <div class="py-1" role="none">
+                <% ['Dog', 'Cat', 'Mouse', 'Fish', 'Other'].each do |pet_name|%>
+                  <div
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 cursor-pointer"
+                    data-action="click->home#selectPet"
+                  ><%= pet_name %></div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div data-home-target="other" class="hidden">
+            <input type="text" placeholder="other pet" class="shadow border rounded ml-3 px-3 py-2 focus:outline-none focus:shadow-outline"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
